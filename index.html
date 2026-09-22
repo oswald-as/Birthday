@@ -523,7 +523,8 @@
 			...pictureDirectories.flatMap(directory => pictureNames.map(name => directory + name))];
 		const quote = document.querySelector('#quote');
 
-
+		function preload_image(im_url) {  let img = new Image();  img.src = im_url;}
+		for(let i = 0; i < pictures.length; i++) { preload_image(pictures[i]); }
 
 		function floatEmoji(e) { const x = document.createElement('span'); x.className = 'float'; x.textContent = e; x.style.left = Math.random() * 95 + 'vw'; x.style.bottom = '-30px'; document.body.append(x); setTimeout(() => x.remove(), 7000); }
 
